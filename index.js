@@ -1,5 +1,5 @@
-const express = require("express")
-const fs = require("fs")
+import express from "express"
+import fs from "fs"
 
 const app = express()
 
@@ -16,49 +16,40 @@ app.get("/", (req,res)=>{
 
 app.get("/users", (req,res)=>{
     const name = req.query.name;
-    const MaxAge = req.query.max_age;
-    const MinAge = req.query.min_age;
+    const sort = req.query.sort;
     if(name){
         let queryUsersName = users.filter(elem=>{
             return elem.name.toLocaleLowerCase() === name.toLocaleLowerCase()
         })
         if(queryUsersName.length >= 1){
-            res.send(queryUsersName)
+            res.status(200).json(queryUsersName)
         }else{
-            res.send(users)
+            res.status(200).json(users)
+        }
+    }else if(sort){
+        console.log(sort)
+        if(sort === "max"){
+            let newArr = users.sort((a,b)=>b.age - a.age)
+            res.status(200).json(newArr)
+        }else if(sort === "min"){
+            let newArr = users.sort((a,b)=>a.age - b.age)
+            res.status(200).json(newArr)
+        }else{
+            res.status(404).send("wrong input")
         }
     }
-    else if(MaxAge){
-        let queryUsersAge = users.filter(elem=>{
-            return elem.age <= +MaxAge
-        })
-        if(queryUsersAge.length >= 1){
-            res.send(queryUsersAge)
-        }else{
-            res.send(users)
-        }
-    }
-    else if(MinAge){
-        let queryUsersAge = users.filter(elem=>{
-            return elem.age >= +MinAge
-        })
-        if(queryUsersAge.length >= 1){
-            res.send(queryUsersAge)
-        }else{
-            res.send(users)
-        }
-    }else{
-        res.send(users)
+    else{   
+        res.status(200).json(users)
     }
 })
 
 app.get("/users/:id", (req,res)=>{
     let user = users.find(elem=> elem.id === req.params.id)
     if(user){
-        res.send(user)
+        res.status(200).json(user)
     }
     else{
-        res.send("user not found")
+        res.status(404).send("user not found")
     }
 })
 
