@@ -1,17 +1,1 @@
-[
-    {
-        "id" : "1",
-        "name" : "Valod",
-        "age" : 13
-    },
-    {
-        "id" : "2",
-        "name" : "Kirakos",
-        "age" : 34
-    },
-    {
-        "id" : "3",
-        "name" : "Vika",
-        "age" : 24
-    }
-]
+[{"id":"2","name":"Hoso","age":32},{"id":"3","name":"David","age":34},{"id":"4","name":"Sergey","age":23},{"id":"5","name":"Gagik","age":23},{"id":"6","name":"ashot","age":13},{"id":"7","name":"Kirakos","age":16},{"id":"8","name":"Gagik","age":32},{"id":"9","name":"Vlad","age":23},{"id":"11","name":"Seroj","age":24},{"id":"12","name":"kikos","age":23},{"id":"13","name":"siso","age":12},{"id":"14","name":"vova","age":34},{"id":"15","name":"Telo","age":35},{"id":"16","name":"Hoso","age":10},{"id":"17","name":"Sipan","age":23},{"id":"18","name":"Bobol","age":24},{"id":"19","name":"Tata","age":67},{"id":"20","name":"sisi","age":34},{"id":"21","name":"koko","age":25},{"id":"22","name":"vava","age":14},{"id":"23","name":"edo","age":34},{"id":"24","name":"kiki","age":38},{"id":"25","name":"bobol","age":12},{"id":"26","name":"Karine","age":11},{"id":"27","name":"karine","age":33},{"id":"28","name":"Gagik","age":90},{"id":"29","name":"Jor","age":22},{"id":"30","name":"yoyo","age":32},{"id":"31","name":"edo2","age":34},{"id":"32","name":"kara","age":70},{"id":"33","name":"Vahe","age":56}]
